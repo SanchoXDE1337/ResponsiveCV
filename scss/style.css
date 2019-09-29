@@ -20,16 +20,18 @@ header {
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
+  padding: 15px 0 15px;
   width: 100%;
-  background-color: crimson;
+  background-color: rgba(25, 204, 136, 0.75);
   border-radius: 2em;
-  border: lightcoral dashed 0.5em;
+  border: #cc195d dashed 0.35em;
   margin-bottom: 2em;
 }
-header h1 {
+header .info {
+  padding: 10px 10vw;
+}
+header .info h1 {
   font-size: 2.5rem;
-  padding: 10px;
 }
 header .links {
   flex: 1 auto;
@@ -39,8 +41,9 @@ header .links {
   justify-content: space-around;
 }
 header #avatar {
-  height: 20vh;
+  height: 25vh;
   border-radius: 50%;
+  border: #cc195d dashed 0.2em;
 }
 
 a.svg {
@@ -71,10 +74,10 @@ a.svg:after {
 }
 
 .jobs {
-  background-color: darkorchid;
+  background-color: rgba(25, 204, 136, 0.75);
   border-radius: 2em;
   margin-right: 1em;
-  border: lightcoral dashed 0.5em;
+  border: #cc195d dashed 0.35em;
   flex: 1 auto;
   display: flex;
   flex-flow: column wrap;
@@ -92,23 +95,57 @@ a.svg:after {
   padding: 10px;
   border-radius: 2em;
   margin-left: 1em;
-  border: lightcoral dashed 0.5em;
-  background-color: dodgerblue;
+  border: #cc195d dashed 0.35em;
+  background-color: rgba(25, 204, 136, 0.75);
 }
 
 footer {
-  background-color: lightcoral;
+  background-color: rgba(25, 204, 136, 0.75);
+  align-items: center;
   border-radius: 2em;
-  border: cadetblue dashed 0.5em;
+  width: 100%;
+  flex: 1 auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  border: #cc195d dashed 0.35em;
+}
+footer .title {
+  font-size: 1.5em;
+  padding: 0.3em;
+}
+
+.footer {
   flex: 1 auto;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
-  height: 5rem;
-  width: 100%;
+  padding: 1em;
+  font-size: 1.25em;
+}
+.footer div {
+  margin: 0.3em;
+}
+.footer input {
+  height: 3em;
+  font-size: 0.7em;
+  background-color: rgba(51, 71, 91, 0.9);
+}
+.footer button {
+  height: 3em;
+  border-radius: 5px;
+  background-color: #33475b;
 }
 
+@media only screen and (max-width: 860px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
 @media only screen and (max-width: 545px) {
   .advantages {
     margin-top: 2em;
