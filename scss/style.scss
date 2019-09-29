@@ -38,7 +38,7 @@ header {
   background-color: crimson;
   border-radius:2em;
   border: lightcoral dashed 0.5em;
-  margin: 2em;
+  margin-bottom: 2em;
 
   h1 {
     font-size: 2.5rem;
@@ -76,28 +76,48 @@ a.svg {
 
 .main {
   flex: 1 auto;
-  height: 5rem;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  margin-bottom: 2em;
 }
 
 .jobs {
   background-color: darkorchid;
+  border-radius:2em;
+  margin-right: 1em;
+  border: lightcoral dashed 0.5em;
   @include flex-item-column;
 }
 
 .advantages {
   @include flex-item-column;
+  border-radius:2em;
+  margin-left: 1em;
+  border: lightcoral dashed 0.5em;
   background-color: dodgerblue;
 }
 
 footer {
   background-color: lightcoral;
+  border-radius:2em;
+  border: cadetblue dashed 0.5em;
   @include flex-item-row;
-  margin-top: 2em;
+  //margin-top: 2em;
   height: 5rem;
   width: 100%;
 }
 
+@media only screen and (max-width: 545px) {
+  .advantages {
+    margin-top: 2em;
+    margin-left: 0;
+  }
+  .jobs {
+    margin-right: 0;
+  }
+  .main {
+    flex-direction: column;
+  }
+}
