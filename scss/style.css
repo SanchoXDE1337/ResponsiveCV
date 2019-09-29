@@ -1,4 +1,7 @@
 .container {
+  font-family: "AvenirNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.625;
+  color: #33475b;
   display: flex;
   width: 90vw;
   margin: 0 auto;
@@ -8,21 +11,58 @@
   align-items: center;
 }
 .container * {
-  flex: 1 auto;
   box-sizing: border-box;
 }
 
 header {
+  flex: 1 auto;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
+  padding: 10px;
   width: 100%;
-  height: 5rem;
   background-color: crimson;
+  border-radius: 2em;
+  border: lightcoral dashed 0.5em;
+  margin: 2em;
+}
+header h1 {
+  font-size: 2.5rem;
+  padding: 10px;
+}
+header .links {
+  flex: 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+header #avatar {
+  height: 20vh;
+  border-radius: 50%;
+}
+
+a.svg {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+a.svg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.logo {
+  width: 2.5em;
 }
 
 .main {
+  flex: 1 auto;
   height: 5rem;
   width: 100%;
   display: flex;
@@ -32,6 +72,7 @@ header {
 
 .jobs {
   background-color: darkorchid;
+  flex: 1 auto;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -39,7 +80,8 @@ header {
   padding: 10px;
 }
 
-.links {
+.advantages {
+  flex: 1 auto;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
@@ -50,10 +92,12 @@ header {
 
 footer {
   background-color: lightcoral;
+  flex: 1 auto;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
+  margin-top: 2em;
   height: 5rem;
   width: 100%;
 }
