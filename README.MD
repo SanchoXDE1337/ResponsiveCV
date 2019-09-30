@@ -1,1 +1,0 @@
-Responsive CV is under :construction:
