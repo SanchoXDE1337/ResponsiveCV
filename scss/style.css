@@ -37,7 +37,7 @@ header .info {
   padding: 10px 10vw;
 }
 header .info h1 {
-  font-size: 2.5rem;
+  font-size: 2.75em;
   font-weight: bold;
 }
 header .links {
@@ -93,6 +93,7 @@ a.svg:after {
 
 .main {
   flex: 1 auto;
+  font-size: 1.75em;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -102,6 +103,7 @@ a.svg:after {
 
 .jobs {
   background-color: rgba(25, 204, 136, 0.75);
+  padding: 1rem;
   border-radius: 2em;
   margin-right: 0.5em;
   border: #cc195d dashed 0.35em;
@@ -110,7 +112,6 @@ a.svg:after {
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
 }
 .jobs li {
   list-style: none;
@@ -126,12 +127,12 @@ a.svg:after {
 }
 
 .advantages {
+  padding: 1rem;
   flex: 1 auto;
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
   border-radius: 2em;
   margin-left: 0.5em;
   border: #cc195d dashed 0.35em;
@@ -152,7 +153,6 @@ a.svg:after {
 
 footer {
   background-color: rgba(25, 204, 136, 0.75);
-  align-items: center;
   border-radius: 2em;
   width: 100%;
   flex: 1 auto;
@@ -160,10 +160,10 @@ footer {
   flex-flow: column wrap;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
   border: #cc195d dashed 0.35em;
 }
 footer .title {
+  text-align: center;
   font-size: 1.5em;
   padding: 0.3em;
 }
@@ -222,7 +222,7 @@ footer .title {
     align-items: flex-end;
   }
 }
-@media only screen and (max-width: 545px) {
+@media only screen and (max-width: 620px) {
   .advantages {
     margin-top: 1em;
     margin-left: 0;
@@ -234,6 +234,16 @@ footer .title {
 
   .main {
     flex-direction: column;
+  }
+}
+@media only screen and (max-width: 360px) {
+  body {
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+
+  .footer input {
+    width: 70vw;
   }
 }
 
