@@ -1,3 +1,8 @@
+body {
+  background-color: antiquewhite;
+  font-weight: 600;
+}
+
 .container {
   * {
     box-sizing: border-box;
@@ -32,19 +37,32 @@
   justify-content: space-around;
 }
 
+@mixin rocket-ul {
+  li {
+    list-style: none; /* Скрываем маркеры списка */
+    text-indent: -1em; /* Сдвигаем элементы списка влево */
+  }
+  li::before {
+    content: '🚀'; /* Добавляем маркер в шестнадцатеричном формате*/
+    padding-right: 5px; /* Расстояние от маркеров до текста */
+  }
+}
+
 header {
   @include flex-item-row;
   padding: 15px 0 15px;
   width: 100%;
   background-color: rgba(#19cc88, 0.75);
   border-radius: 2em;
-  border: 	#cc195d dashed 0.35em;
-  margin-bottom: 2em;
+  border: #cc195d dashed 0.35em;
+  margin-bottom: 1em;
 
   .info {
     h1 {
       font-size: 2.5rem;
+      font-weight: bold;
     }
+
     padding: 10px 10vw;
   }
 
@@ -56,6 +74,13 @@ header {
     height: 25vh;
     border-radius: 50%;
     border: #cc195d dashed 0.2em;
+    transition-property: opacity;
+
+    &:hover {
+      transition-duration: 0.5s;
+      transform: scale(1.02);
+      opacity: 0.8;
+    }
   }
 }
 
@@ -74,8 +99,24 @@ a.svg {
   }
 }
 
+.svg {
+  transition-property: opacity;
+
+  &:hover {
+    transition-duration: 0.5s;
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
 .logo {
   width: 2.5em;
+  transition-property: opacity;
+
+  &:hover {
+    transition-duration: 0.5s;
+    opacity: 0.8;
+  }
 }
 
 .main {
@@ -84,23 +125,25 @@ a.svg {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .jobs {
   background-color: rgba(#19cc88, 0.75);
   border-radius: 2em;
-  margin-right: 1em;
-  border: 	#cc195d dashed .35em;
+  margin-right: 0.5em;
+  border: #cc195d dashed .35em;
   @include flex-item-column;
+  @include rocket-ul;
 }
 
 .advantages {
   @include flex-item-column;
   border-radius: 2em;
-  margin-left: 1em;
-  border: 	#cc195d dashed 0.35em;
+  margin-left: 0.5em;
+  border: #cc195d dashed 0.35em;
   background-color: rgba(#19cc88, 0.75);
+  @include rocket-ul;
 }
 
 footer {
@@ -109,7 +152,7 @@ footer {
   border-radius: 2em;
   width: 100%;
   @include flex-item-column;
-  border: 	#cc195d dashed 0.35em;
+  border: #cc195d dashed 0.35em;
 
   .title {
     font-size: 1.5em;
@@ -129,13 +172,43 @@ footer {
   input {
     height: 3em;
     font-size: 0.7em;
-    background-color: rgba(#33475b, 0.9);
-  }
-  
-  button {
-    height: 3em;
+    color: beige;
+    padding: 5px;
+
+    &:focus {
+      outline: #f3002e 1px solid;
+    }
+
+    &::placeholder {
+      text-align: center;
+      font-weight: 600;
+      color: beige;
+    }
+
+    background-color: #ff5a79;
+    box-shadow: 0 3px #f3002e;
     border-radius: 5px;
-    background-color: #33475b;
+    border: none;
+  }
+
+  button {
+    //height: 4em;
+    box-shadow: 0 4px #f3002e;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    background-color: #ff5a79;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16.5px;
+    font-weight: 600;
+    padding: .75em 1em;
+
+    &:hover {
+      box-shadow: 0 1px #f3002e;
+      transition-duration: 0.3s;
+      transform: translateY(4px);
+    }
   }
 }
 
@@ -148,7 +221,7 @@ footer {
 
 @media only screen and (max-width: 545px) {
   .advantages {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-left: 0;
   }
   .jobs {

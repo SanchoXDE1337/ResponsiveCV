@@ -1,3 +1,9 @@
+@charset "UTF-8";
+body {
+  background-color: antiquewhite;
+  font-weight: 600;
+}
+
 .container {
   font-family: "AvenirNext", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.625;
@@ -25,13 +31,14 @@ header {
   background-color: rgba(25, 204, 136, 0.75);
   border-radius: 2em;
   border: #cc195d dashed 0.35em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 header .info {
   padding: 10px 10vw;
 }
 header .info h1 {
   font-size: 2.5rem;
+  font-weight: bold;
 }
 header .links {
   flex: 1 auto;
@@ -44,6 +51,12 @@ header #avatar {
   height: 25vh;
   border-radius: 50%;
   border: #cc195d dashed 0.2em;
+  transition-property: opacity;
+}
+header #avatar:hover {
+  transition-duration: 0.5s;
+  transform: scale(1.02);
+  opacity: 0.8;
 }
 
 a.svg {
@@ -60,8 +73,22 @@ a.svg:after {
   left: 0;
 }
 
+.svg {
+  transition-property: opacity;
+}
+.svg:hover {
+  transition-duration: 0.5s;
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
 .logo {
   width: 2.5em;
+  transition-property: opacity;
+}
+.logo:hover {
+  transition-duration: 0.5s;
+  opacity: 0.8;
 }
 
 .main {
@@ -70,13 +97,13 @@ a.svg:after {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .jobs {
   background-color: rgba(25, 204, 136, 0.75);
   border-radius: 2em;
-  margin-right: 1em;
+  margin-right: 0.5em;
   border: #cc195d dashed 0.35em;
   flex: 1 auto;
   display: flex;
@@ -84,6 +111,18 @@ a.svg:after {
   align-items: center;
   justify-content: space-around;
   padding: 10px;
+}
+.jobs li {
+  list-style: none;
+  /* Скрываем маркеры списка */
+  text-indent: -1em;
+  /* Сдвигаем элементы списка влево */
+}
+.jobs li::before {
+  content: "🚀";
+  /* Добавляем маркер в шестнадцатеричном формате*/
+  padding-right: 5px;
+  /* Расстояние от маркеров до текста */
 }
 
 .advantages {
@@ -94,9 +133,21 @@ a.svg:after {
   justify-content: space-around;
   padding: 10px;
   border-radius: 2em;
-  margin-left: 1em;
+  margin-left: 0.5em;
   border: #cc195d dashed 0.35em;
   background-color: rgba(25, 204, 136, 0.75);
+}
+.advantages li {
+  list-style: none;
+  /* Скрываем маркеры списка */
+  text-indent: -1em;
+  /* Сдвигаем элементы списка влево */
+}
+.advantages li::before {
+  content: "🚀";
+  /* Добавляем маркер в шестнадцатеричном формате*/
+  padding-right: 5px;
+  /* Расстояние от маркеров до текста */
 }
 
 footer {
@@ -132,12 +183,37 @@ footer .title {
 .footer input {
   height: 3em;
   font-size: 0.7em;
-  background-color: rgba(51, 71, 91, 0.9);
+  color: beige;
+  padding: 5px;
+  background-color: #ff5a79;
+  box-shadow: 0 3px #f3002e;
+  border-radius: 5px;
+  border: none;
+}
+.footer input:focus {
+  outline: #f3002e 1px solid;
+}
+.footer input::placeholder {
+  text-align: center;
+  font-weight: 600;
+  color: beige;
 }
 .footer button {
-  height: 3em;
+  box-shadow: 0 4px #f3002e;
+  border: none;
   border-radius: 5px;
-  background-color: #33475b;
+  position: relative;
+  background-color: #ff5a79;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16.5px;
+  font-weight: 600;
+  padding: 0.75em 1em;
+}
+.footer button:hover {
+  box-shadow: 0 1px #f3002e;
+  transition-duration: 0.3s;
+  transform: translateY(4px);
 }
 
 @media only screen and (max-width: 860px) {
@@ -148,7 +224,7 @@ footer .title {
 }
 @media only screen and (max-width: 545px) {
   .advantages {
-    margin-top: 2em;
+    margin-top: 1em;
     margin-left: 0;
   }
 
